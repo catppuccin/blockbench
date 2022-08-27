@@ -1,0 +1,28 @@
+{
+	"name": "Mocha",
+	"author": "Catppuccin",
+	"borders": true,
+	"main_font": "Helvetica",
+	"headline_font": "Sans Serif",
+	"code_font": "courier",
+	"css": ":root{\n  --border-radius-small: 2px;\n}\nheader{\n  margin: 4px;\n}\nimg.blockbench_logo{\n  display: none;\n}\n#menu_bar::before{\n  content: 'BlockBench';\n  font-weight: 600;\n  color: var(--color-accent_text);\n  padding-right: 50px;\n}\n.contextMenu{\n  padding: 3px;\n  border-radius: var(--border-radius-small);\n}\n.contextMenu>*,.menu_bar_point{\n  border-radius: var(--border-radius-small);\n}\n.contextMenu span{\n  color: var(--color-text);\n}\n.contextMenu.sub{\n  transform: translateX(4px);\n}.outliner_object.cube.selected *,button{color: var(--color-dark);}\n#status_bar{\n  transform: translateY(-5px);\n}\n",
+	"colors": {
+		"ui": "#1e1e2e",
+		"back": "#181825",
+		"dark": "#11111b",
+		"border": "#3c3e4f",
+		"selected": "#b6bdf9",
+		"button": "#4e5164",
+		"bright_ui": "#3c3e4f",
+		"accent": "#61657a",
+		"frame": "#181825",
+		"text": "#ced6f2",
+		"light": "#b6bdf9",
+		"accent_text": "#b4befe",
+		"bright_ui_text": "#b4befe",
+		"subtle_text": "#6c7086",
+		"grid": "#a6adc8",
+		"wireframe": "#a6adc8",
+		"checkerboard": "#45475a"
+	}
+}
