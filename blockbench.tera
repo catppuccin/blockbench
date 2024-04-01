@@ -1,0 +1,31 @@
+---
+whiskers:
+  version: 2.0.0
+  matrix:
+    - flavor
+  filename: "themes/{{ flavor.identifier | capitalize }}.bbtheme"
+---
+{%- set palette = flavor.colors -%}
+{
+	"name": "{{ flavor.name }}",
+	"author": "Catppuccin",
+	"colors": {
+		"ui": "#{{ palette.base.hex }}",
+		"back": "#{{ palette.mantle.hex }}",
+		"dark": "#{{ palette.crust.hex }}",
+		"border": "{{ palette.overlay0.hex }}",
+		"selected": "#{{ palette.surface1.hex}}",
+		"button": "#{{ palette.surface0.hex }}",
+		"bright_ui": "#{{ palette.surface0.hex }}",
+		"accent": "#{{ palette.surface1.hex }}",
+		"frame": "#{{ palette.mantle.hex }}",
+		"text": "#{{ palette.text.hex }}",
+		"light": "#{{ palette.subtext0.hex }}",
+		"accent_text": "#{{ palette.lavender.hex }}",
+		"bright_ui_text": "#{{ palette.text.hex }}",
+		"subtle_text": "#{{ palette.subtext0.hex }}",
+		"grid": "#{{ palette.subtext0.hex }}",
+		"wireframe": "#{{ palette.subtext0.hex }}",
+		"checkerboard": "#{{ palette.surface1.hex }}"
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"name": "Frappé",
+	"author": "Catppuccin",
+	"colors": {
+		"ui": "#303446",
+		"back": "#292c3c",
+		"dark": "#232634",
+		"border": "737994",
+		"selected": "#51576d",
+		"button": "#414559",
+		"bright_ui": "#414559",
+		"accent": "#51576d",
+		"frame": "#292c3c",
+		"text": "#c6d0f5",
+		"light": "#a5adce",
+		"accent_text": "#babbf1",
+		"bright_ui_text": "#c6d0f5",
+		"subtle_text": "#a5adce",
+		"grid": "#a5adce",
+		"wireframe": "#a5adce",
+		"checkerboard": "#51576d"
+	}
+}

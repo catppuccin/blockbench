@@ -1,0 +1,23 @@
+{
+	"name": "Mocha",
+	"author": "Catppuccin",
+	"colors": {
+		"ui": "#1e1e2e",
+		"back": "#181825",
+		"dark": "#11111b",
+		"border": "6c7086",
+		"selected": "#45475a",
+		"button": "#313244",
+		"bright_ui": "#313244",
+		"accent": "#45475a",
+		"frame": "#181825",
+		"text": "#cdd6f4",
+		"light": "#a6adc8",
+		"accent_text": "#b4befe",
+		"bright_ui_text": "#cdd6f4",
+		"subtle_text": "#a6adc8",
+		"grid": "#a6adc8",
+		"wireframe": "#a6adc8",
+		"checkerboard": "#45475a"
+	}
+}
