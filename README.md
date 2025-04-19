@@ -37,7 +37,7 @@
 ## Installation
 
 Under File > Preferences > Theme, either select the desired theme file
-after clicking Import Theme, or drag and drop it onto the Theme dialogue.
+after clicking Import Theme, or drag and drop it onto the dialogue.
 
 <!-- ## 💝 Thanks to
 
