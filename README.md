@@ -35,7 +35,9 @@
 </details>
 
 ## Installation
-Simply drag and drop the desired .bbtheme file onto the theme select screen.
+
+Under File > Preferences > Theme, either select the desired theme file
+after clicking Import Theme, or drag and drop it onto the dialogue.
 
 <!-- ## 💝 Thanks to
 
