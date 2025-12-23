@@ -1,0 +1,441 @@
+/*
+name: Catppuccin
+author: Catppuccin
+version: 1.0
+borders: false
+options:
+  flavor:
+    name: Flavor
+    options:
+      latte: Latte
+      frappe: Frappé
+      macchiato: Macchiato
+      mocha: Mocha
+  accent:
+    name: Accent
+    options:
+      rosewater: Rosewater
+      flamingo: Flamingo
+      pink: Pink
+      mauve: Mauve
+      red: Red
+      maroon: Maroon
+      peach: Peach
+      yellow: Yellow
+      green: Green
+      teal: Teal
+      sky: Sky
+      sapphire: Sapphire
+      blue: Blue
+      lavender: Lavender
+*/
+
+body {
+	--color-ui: #1e1e2e;
+  --color-back: #181825;
+  --color-dark: #11111b;
+  --color-border: #6c7086;
+  --color-selected: #45475a;
+  --color-elevated: #313244;
+  --color-button: #313244;
+  --color-bright_ui: #eff1f5;
+  --color-frame: #181825;
+  --color-text: #bac2de;
+  --color-light: #cdd6f4;
+  --color-accent_text: #1e1e2e;
+  --color-bright_ui_text: #4c4f69;
+  --color-subtle_text: #a6adc8;
+  --color-grid: #a6adc8;
+  --color-wireframe: #a6adc8;
+  --color-checkerboard: #45475a;
+
+  --color-accent: #cba6f7;
+
+  --color-menu_separator: #6c7086;
+  --color-guidelines: #a6adc8;
+  
+  --color-close: #f38ba8;
+  --color-confirm: #a6e3a1;
+  --color-error: #f38ba8;
+  --color-warning: #f9e2af;
+
+  --color-stream: #b4befe;
+
+  --color-axis-x: #f38ba8;
+  --color-axis-y: #a6e3a1;
+  --color-axis-z: #89b4fa;
+  --color-axis-w: #f9e2af;
+
+  --color-axis-u: #89dceb;
+  --color-axis-v: #f5c2e7;
+
+  --color-spline-handle-mirrored: #f38ba8;
+  --color-spline-handle-aligned: #f9e2af;
+  --color-spline-handle-free: #a6e3a1;
+}
+
+/* Theme preview can only be accurate when theme selected,
+  limitation with upstream */
+[theme_id^="catppuccin"].theme_preview {
+  --color-ui: inherit !important;
+  --color-back: inherit !important;
+  --color-dark: inherit !important;
+  --color-border: inherit !important;
+  --color-selected: inherit !important;
+  --color-elevated: inherit !important;
+  --color-button: inherit !important;
+  --color-bright_ui: inherit !important;
+  --color-frame: inherit !important;
+  --color-text: inherit !important;
+  --color-light: inherit !important;
+  --color-accent_text: inherit !important;
+  --color-bright_ui_text: inherit !important;
+  --color-subtle_text: inherit !important;
+  --color-grid: inherit !important;
+  --color-wireframe: inherit !important;
+  --color-checkerboard: inherit !important;
+  --color-accent: inherit !important;
+}
+[theme-flavor="latte"] {
+  --color-ui: #eff1f5;
+  --color-back: #e6e9ef;
+  --color-dark: #dce0e8;
+  --color-border: #9ca0b0;
+  --color-selected: #bcc0cc;
+  --color-elevated: #ccd0da;
+  --color-button: #ccd0da;
+  --color-bright_ui: #eff1f5;
+  --color-frame: #e6e9ef;
+  --color-text: #5c5f77;
+  --color-light: #4c4f69;
+  --color-accent_text: #eff1f5;
+  --color-bright_ui_text: #4c4f69;
+  --color-subtle_text: #6c6f85;
+  --color-grid: #6c6f85;
+  --color-wireframe: #6c6f85;
+  --color-checkerboard: #bcc0cc;
+
+  --color-menu_separator: #9ca0b0;
+  --color-guidelines: #6c6f85;
+  
+  --color-close: #d20f39;
+  --color-confirm: #40a02b;
+  --color-error: #d20f39;
+  --color-warning: #df8e1d;
+
+  --color-stream: #7287fd;
+
+  --color-axis-x: #d20f39;
+  --color-axis-y: #40a02b;
+  --color-axis-z: #1e66f5;
+  --color-axis-w: #df8e1d;
+
+  --color-axis-u: #04a5e5;
+  --color-axis-v: #ea76cb;
+
+  --color-spline-handle-mirrored: #d20f39;
+  --color-spline-handle-aligned: #df8e1d;
+  --color-spline-handle-free: #40a02b;
+}
+[theme-flavor="latte"][theme-accent="rosewater"] {
+  --color-accent: #dc8a78;
+}
+[theme-flavor="latte"][theme-accent="flamingo"] {
+  --color-accent: #dd7878;
+}
+[theme-flavor="latte"][theme-accent="pink"] {
+  --color-accent: #ea76cb;
+}
+[theme-flavor="latte"][theme-accent="mauve"] {
+  --color-accent: #8839ef;
+}
+[theme-flavor="latte"][theme-accent="red"] {
+  --color-accent: #d20f39;
+}
+[theme-flavor="latte"][theme-accent="maroon"] {
+  --color-accent: #e64553;
+}
+[theme-flavor="latte"][theme-accent="peach"] {
+  --color-accent: #fe640b;
+}
+[theme-flavor="latte"][theme-accent="yellow"] {
+  --color-accent: #df8e1d;
+}
+[theme-flavor="latte"][theme-accent="green"] {
+  --color-accent: #40a02b;
+}
+[theme-flavor="latte"][theme-accent="teal"] {
+  --color-accent: #179299;
+}
+[theme-flavor="latte"][theme-accent="sky"] {
+  --color-accent: #04a5e5;
+}
+[theme-flavor="latte"][theme-accent="sapphire"] {
+  --color-accent: #209fb5;
+}
+[theme-flavor="latte"][theme-accent="blue"] {
+  --color-accent: #1e66f5;
+}
+[theme-flavor="latte"][theme-accent="lavender"] {
+  --color-accent: #7287fd;
+}
+[theme-flavor="frappe"] {
+  --color-ui: #303446;
+  --color-back: #292c3c;
+  --color-dark: #232634;
+  --color-border: #737994;
+  --color-selected: #51576d;
+  --color-elevated: #414559;
+  --color-button: #414559;
+  --color-bright_ui: #eff1f5;
+  --color-frame: #292c3c;
+  --color-text: #b5bfe2;
+  --color-light: #c6d0f5;
+  --color-accent_text: #303446;
+  --color-bright_ui_text: #4c4f69;
+  --color-subtle_text: #a5adce;
+  --color-grid: #a5adce;
+  --color-wireframe: #a5adce;
+  --color-checkerboard: #51576d;
+
+  --color-menu_separator: #737994;
+  --color-guidelines: #a5adce;
+  
+  --color-close: #e78284;
+  --color-confirm: #a6d189;
+  --color-error: #e78284;
+  --color-warning: #e5c890;
+
+  --color-stream: #babbf1;
+
+  --color-axis-x: #e78284;
+  --color-axis-y: #a6d189;
+  --color-axis-z: #8caaee;
+  --color-axis-w: #e5c890;
+
+  --color-axis-u: #99d1db;
+  --color-axis-v: #f4b8e4;
+
+  --color-spline-handle-mirrored: #e78284;
+  --color-spline-handle-aligned: #e5c890;
+  --color-spline-handle-free: #a6d189;
+}
+[theme-flavor="frappe"][theme-accent="rosewater"] {
+  --color-accent: #f2d5cf;
+}
+[theme-flavor="frappe"][theme-accent="flamingo"] {
+  --color-accent: #eebebe;
+}
+[theme-flavor="frappe"][theme-accent="pink"] {
+  --color-accent: #f4b8e4;
+}
+[theme-flavor="frappe"][theme-accent="mauve"] {
+  --color-accent: #ca9ee6;
+}
+[theme-flavor="frappe"][theme-accent="red"] {
+  --color-accent: #e78284;
+}
+[theme-flavor="frappe"][theme-accent="maroon"] {
+  --color-accent: #ea999c;
+}
+[theme-flavor="frappe"][theme-accent="peach"] {
+  --color-accent: #ef9f76;
+}
+[theme-flavor="frappe"][theme-accent="yellow"] {
+  --color-accent: #e5c890;
+}
+[theme-flavor="frappe"][theme-accent="green"] {
+  --color-accent: #a6d189;
+}
+[theme-flavor="frappe"][theme-accent="teal"] {
+  --color-accent: #81c8be;
+}
+[theme-flavor="frappe"][theme-accent="sky"] {
+  --color-accent: #99d1db;
+}
+[theme-flavor="frappe"][theme-accent="sapphire"] {
+  --color-accent: #85c1dc;
+}
+[theme-flavor="frappe"][theme-accent="blue"] {
+  --color-accent: #8caaee;
+}
+[theme-flavor="frappe"][theme-accent="lavender"] {
+  --color-accent: #babbf1;
+}
+[theme-flavor="macchiato"] {
+  --color-ui: #24273a;
+  --color-back: #1e2030;
+  --color-dark: #181926;
+  --color-border: #6e738d;
+  --color-selected: #494d64;
+  --color-elevated: #363a4f;
+  --color-button: #363a4f;
+  --color-bright_ui: #eff1f5;
+  --color-frame: #1e2030;
+  --color-text: #b8c0e0;
+  --color-light: #cad3f5;
+  --color-accent_text: #24273a;
+  --color-bright_ui_text: #4c4f69;
+  --color-subtle_text: #a5adcb;
+  --color-grid: #a5adcb;
+  --color-wireframe: #a5adcb;
+  --color-checkerboard: #494d64;
+
+  --color-menu_separator: #6e738d;
+  --color-guidelines: #a5adcb;
+  
+  --color-close: #ed8796;
+  --color-confirm: #a6da95;
+  --color-error: #ed8796;
+  --color-warning: #eed49f;
+
+  --color-stream: #b7bdf8;
+
+  --color-axis-x: #ed8796;
+  --color-axis-y: #a6da95;
+  --color-axis-z: #8aadf4;
+  --color-axis-w: #eed49f;
+
+  --color-axis-u: #91d7e3;
+  --color-axis-v: #f5bde6;
+
+  --color-spline-handle-mirrored: #ed8796;
+  --color-spline-handle-aligned: #eed49f;
+  --color-spline-handle-free: #a6da95;
+}
+[theme-flavor="macchiato"][theme-accent="rosewater"] {
+  --color-accent: #f4dbd6;
+}
+[theme-flavor="macchiato"][theme-accent="flamingo"] {
+  --color-accent: #f0c6c6;
+}
+[theme-flavor="macchiato"][theme-accent="pink"] {
+  --color-accent: #f5bde6;
+}
+[theme-flavor="macchiato"][theme-accent="mauve"] {
+  --color-accent: #c6a0f6;
+}
+[theme-flavor="macchiato"][theme-accent="red"] {
+  --color-accent: #ed8796;
+}
+[theme-flavor="macchiato"][theme-accent="maroon"] {
+  --color-accent: #ee99a0;
+}
+[theme-flavor="macchiato"][theme-accent="peach"] {
+  --color-accent: #f5a97f;
+}
+[theme-flavor="macchiato"][theme-accent="yellow"] {
+  --color-accent: #eed49f;
+}
+[theme-flavor="macchiato"][theme-accent="green"] {
+  --color-accent: #a6da95;
+}
+[theme-flavor="macchiato"][theme-accent="teal"] {
+  --color-accent: #8bd5ca;
+}
+[theme-flavor="macchiato"][theme-accent="sky"] {
+  --color-accent: #91d7e3;
+}
+[theme-flavor="macchiato"][theme-accent="sapphire"] {
+  --color-accent: #7dc4e4;
+}
+[theme-flavor="macchiato"][theme-accent="blue"] {
+  --color-accent: #8aadf4;
+}
+[theme-flavor="macchiato"][theme-accent="lavender"] {
+  --color-accent: #b7bdf8;
+}
+[theme-flavor="mocha"] {
+  --color-ui: #1e1e2e;
+  --color-back: #181825;
+  --color-dark: #11111b;
+  --color-border: #6c7086;
+  --color-selected: #45475a;
+  --color-elevated: #313244;
+  --color-button: #313244;
+  --color-bright_ui: #eff1f5;
+  --color-frame: #181825;
+  --color-text: #bac2de;
+  --color-light: #cdd6f4;
+  --color-accent_text: #1e1e2e;
+  --color-bright_ui_text: #4c4f69;
+  --color-subtle_text: #a6adc8;
+  --color-grid: #a6adc8;
+  --color-wireframe: #a6adc8;
+  --color-checkerboard: #45475a;
+
+  --color-menu_separator: #6c7086;
+  --color-guidelines: #a6adc8;
+  
+  --color-close: #f38ba8;
+  --color-confirm: #a6e3a1;
+  --color-error: #f38ba8;
+  --color-warning: #f9e2af;
+
+  --color-stream: #b4befe;
+
+  --color-axis-x: #f38ba8;
+  --color-axis-y: #a6e3a1;
+  --color-axis-z: #89b4fa;
+  --color-axis-w: #f9e2af;
+
+  --color-axis-u: #89dceb;
+  --color-axis-v: #f5c2e7;
+
+  --color-spline-handle-mirrored: #f38ba8;
+  --color-spline-handle-aligned: #f9e2af;
+  --color-spline-handle-free: #a6e3a1;
+}
+[theme-flavor="mocha"][theme-accent="rosewater"] {
+  --color-accent: #f5e0dc;
+}
+[theme-flavor="mocha"][theme-accent="flamingo"] {
+  --color-accent: #f2cdcd;
+}
+[theme-flavor="mocha"][theme-accent="pink"] {
+  --color-accent: #f5c2e7;
+}
+[theme-flavor="mocha"][theme-accent="mauve"] {
+  --color-accent: #cba6f7;
+}
+[theme-flavor="mocha"][theme-accent="red"] {
+  --color-accent: #f38ba8;
+}
+[theme-flavor="mocha"][theme-accent="maroon"] {
+  --color-accent: #eba0ac;
+}
+[theme-flavor="mocha"][theme-accent="peach"] {
+  --color-accent: #fab387;
+}
+[theme-flavor="mocha"][theme-accent="yellow"] {
+  --color-accent: #f9e2af;
+}
+[theme-flavor="mocha"][theme-accent="green"] {
+  --color-accent: #a6e3a1;
+}
+[theme-flavor="mocha"][theme-accent="teal"] {
+  --color-accent: #94e2d5;
+}
+[theme-flavor="mocha"][theme-accent="sky"] {
+  --color-accent: #89dceb;
+}
+[theme-flavor="mocha"][theme-accent="sapphire"] {
+  --color-accent: #74c7ec;
+}
+[theme-flavor="mocha"][theme-accent="blue"] {
+  --color-accent: #89b4fa;
+}
+[theme-flavor="mocha"][theme-accent="lavender"] {
+  --color-accent: #b4befe;
+}
+#preview {
+  --color-axis-x: inherit;
+  --color-axis-y: inherit;
+  --color-axis-z: inherit;
+  --color-axis-u: inherit;
+  --color-axis-v: inherit;
+  --color-axis-w: inherit;
+}
+[style^="background-color: var(--color-stream)"] {
+  color: #1e1e2e !important;
+}

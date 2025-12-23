@@ -1,31 +1,159 @@
 ---
 whiskers:
-  version: 2.0.0
-  matrix:
-    - flavor
-  filename: "themes/{{ flavor.identifier | capitalize }}.bbtheme"
+  version: ^2.5.1
+  filename: "themes/catppuccin.bbtheme"
+  hex_format: "#{{r}}{{g}}{{b}}"
 ---
-{%- set palette = flavor.colors -%}
-{
-	"name": "{{ flavor.name }}",
-	"author": "Catppuccin",
-	"colors": {
-		"ui": "#{{ palette.base.hex }}",
-		"back": "#{{ palette.mantle.hex }}",
-		"dark": "#{{ palette.crust.hex }}",
-		"border": "{{ palette.overlay0.hex }}",
-		"selected": "#{{ palette.surface1.hex}}",
-		"button": "#{{ palette.surface0.hex }}",
-		"bright_ui": "#{{ palette.surface0.hex }}",
-		"accent": "#{{ palette.surface1.hex }}",
-		"frame": "#{{ palette.mantle.hex }}",
-		"text": "#{{ palette.text.hex }}",
-		"light": "#{{ palette.subtext0.hex }}",
-		"accent_text": "#{{ palette.lavender.hex }}",
-		"bright_ui_text": "#{{ palette.text.hex }}",
-		"subtle_text": "#{{ palette.subtext0.hex }}",
-		"grid": "#{{ palette.subtext0.hex }}",
-		"wireframe": "#{{ palette.subtext0.hex }}",
-		"checkerboard": "#{{ palette.surface1.hex }}"
-	}
+/*
+name: Catppuccin
+author: Catppuccin
+version: 1.0
+borders: false
+options:
+  flavor:
+    name: Flavor
+    options:
+      latte: Latte
+      frappe: Frappé
+      macchiato: Macchiato
+      mocha: Mocha
+  accent:
+    name: Accent
+    options:
+      {%- for flavorId, flavor in flavors %}{%- if loop.last %}
+      {%- for colorId, color in flavor.colors %}{%- if color.accent %}
+      {{ colorId }}: {{color.name}}
+      {%- endif %}{%- endfor %}
+      {%- endif %}{%- endfor %}
+*/
+
+{%- set_global default_flavor = flavors['mocha'].colors %}
+{%- set_global brightui = flavors['latte'].colors %}
+
+body {
+	--color-ui: {{ default_flavor.base.hex }};
+  --color-back: {{ default_flavor.mantle.hex }};
+  --color-dark: {{ default_flavor.crust.hex }};
+  --color-border: {{ default_flavor.overlay0.hex }};
+  --color-selected: {{ default_flavor.surface1.hex }};
+  --color-elevated: {{ default_flavor.surface0.hex }};
+  --color-button: {{ default_flavor.surface0.hex }};
+  --color-bright_ui: {{ brightui.base.hex }};
+  --color-frame: {{ default_flavor.mantle.hex }};
+  --color-text: {{ default_flavor.subtext1.hex }};
+  --color-light: {{ default_flavor.text.hex }};
+  --color-accent_text: {{ default_flavor.base.hex }};
+  --color-bright_ui_text: {{ brightui.text.hex }};
+  --color-subtle_text: {{ default_flavor.subtext0.hex }};
+  --color-grid: {{ default_flavor.subtext0.hex }};
+  --color-wireframe: {{ default_flavor.subtext0.hex }};
+  --color-checkerboard: {{ default_flavor.surface1.hex }};
+
+  --color-accent: {{ default_flavor.mauve.hex }};
+
+  --color-menu_separator: {{ default_flavor.overlay0.hex }};
+  --color-guidelines: {{ default_flavor.subtext0 | mod(opacity=0.7) | get(key="hex") }};
+  
+  --color-close: {{ default_flavor.red.hex }};
+  --color-confirm: {{ default_flavor.green.hex }};
+  --color-error: {{ default_flavor.red.hex }};
+  --color-warning: {{ default_flavor.yellow.hex }};
+
+  --color-stream: {{ default_flavor.lavender.hex }};
+
+  --color-axis-x: {{ default_flavor.red.hex }};
+  --color-axis-y: {{ default_flavor.green.hex }};
+  --color-axis-z: {{ default_flavor.blue.hex }};
+  --color-axis-w: {{ default_flavor.yellow.hex }};
+
+  --color-axis-u: {{ default_flavor.sky.hex }};
+  --color-axis-v: {{ default_flavor.pink.hex }};
+
+  --color-spline-handle-mirrored: {{ default_flavor.red.hex }};
+  --color-spline-handle-aligned: {{ default_flavor.yellow.hex }};
+  --color-spline-handle-free: {{ default_flavor.green.hex }};
+}
+
+/* Theme preview can only be accurate when theme selected,
+  limitation with upstream */
+[theme_id^="catppuccin"].theme_preview {
+  --color-ui: inherit !important;
+  --color-back: inherit !important;
+  --color-dark: inherit !important;
+  --color-border: inherit !important;
+  --color-selected: inherit !important;
+  --color-elevated: inherit !important;
+  --color-button: inherit !important;
+  --color-bright_ui: inherit !important;
+  --color-frame: inherit !important;
+  --color-text: inherit !important;
+  --color-light: inherit !important;
+  --color-accent_text: inherit !important;
+  --color-bright_ui_text: inherit !important;
+  --color-subtle_text: inherit !important;
+  --color-grid: inherit !important;
+  --color-wireframe: inherit !important;
+  --color-checkerboard: inherit !important;
+  --color-accent: inherit !important;
+}
+
+{%- for flavorId, flavor in flavors %}
+[theme-flavor="{{ flavorId }}"] {
+  {%- set_global colors = flavor.colors %}
+  --color-ui: {{ colors.base.hex }};
+  --color-back: {{ colors.mantle.hex }};
+  --color-dark: {{ colors.crust.hex }};
+  --color-border: {{ colors.overlay0.hex }};
+  --color-selected: {{ colors.surface1.hex }};
+  --color-elevated: {{ colors.surface0.hex }};
+  --color-button: {{ colors.surface0.hex }};
+  --color-bright_ui: {{ brightui.base.hex }};
+  --color-frame: {{ colors.mantle.hex }};
+  --color-text: {{ colors.subtext1.hex }};
+  --color-light: {{ colors.text.hex }};
+  --color-accent_text: {{ colors.base.hex }};
+  --color-bright_ui_text: {{ brightui.text.hex }};
+  --color-subtle_text: {{ colors.subtext0.hex }};
+  --color-grid: {{ colors.subtext0.hex }};
+  --color-wireframe: {{ colors.subtext0.hex }};
+  --color-checkerboard: {{ colors.surface1.hex }};
+
+  --color-menu_separator: {{ colors.overlay0.hex }};
+  --color-guidelines: {{ colors.subtext0 | mod(opacity=0.7) | get(key="hex") }};
+  
+  --color-close: {{ colors.red.hex }};
+  --color-confirm: {{ colors.green.hex }};
+  --color-error: {{ colors.red.hex }};
+  --color-warning: {{ colors.yellow.hex }};
+
+  --color-stream: {{ colors.lavender.hex }};
+
+  --color-axis-x: {{ colors.red.hex }};
+  --color-axis-y: {{ colors.green.hex }};
+  --color-axis-z: {{ colors.blue.hex }};
+  --color-axis-w: {{ colors.yellow.hex }};
+
+  --color-axis-u: {{ colors.sky.hex }};
+  --color-axis-v: {{ colors.pink.hex }};
+
+  --color-spline-handle-mirrored: {{ colors.red.hex }};
+  --color-spline-handle-aligned: {{ colors.yellow.hex }};
+  --color-spline-handle-free: {{ colors.green.hex }};
+}
+{%- for colorId, color in flavor.colors %}{% if color.accent %}
+[theme-flavor="{{ flavorId }}"][theme-accent="{{ colorId }}"] {
+  --color-accent: {{ color.hex }};
+}
+{%- endif %}{%- endfor %}
+{%- endfor %}
+#preview {
+  --color-axis-x: inherit;
+  --color-axis-y: inherit;
+  --color-axis-z: inherit;
+  --color-axis-u: inherit;
+  --color-axis-v: inherit;
+  --color-axis-w: inherit;
+}
+[style^="background-color: var(--color-stream)"] {
+  color: {{ colors.base.hex }} !important;
 }
